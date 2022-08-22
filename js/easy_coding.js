@@ -96,6 +96,8 @@ function isSorted(arr) {
 reverse('')                         // ''
 reverse('abcdef')                   // 'fedcba'
 
+reverse('21324')
+
 /////////////////////////////////Solving////////////////////////////////////
 function reverse(str) {
     let reversed=[];
@@ -110,6 +112,25 @@ function reverse(str) {
 6. //indexOf - Implement the indexOf function for arrays.
 indexOf([1, 2, 3], 1)               // 0
 indexOf([1, 2, 3], 4)               // -1
+
+indexOf([1, 2, 3, 2, 3], 2) 
+
+/////////////////////////////////Solving////////////////////////////////////
+function indexOf(arr, chr) {
+    let indexes=[];
+
+    for (let i=0; i<arr.length; i++) {
+        if (arr[i] == chr) {
+            indexes.push(i)
+        }
+    }
+    if (indexes.length === 0) {
+        indexes.push(-1)
+    }
+
+    return console.log('Index(es) of "'+chr+'" in array ['+arr+'] is/are ['+ indexes+']');
+}
+////////////////////////////////////////////////////////////////////////////
 
 7. // isPalindrome - Return true or false indicating whether the given string is a plaindrone (case and space insensitive).
 isPalindrome('')                                // true
