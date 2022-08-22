@@ -196,18 +196,27 @@ isBalanced('foo { bar { baz } boo }') // true
 isBalanced('foo { bar { baz }')       // false
 isBalanced('foo { bar } }')           // false
 
+isBalanced('{}}{')
+
 /////////////////////////////////Solving////////////////////////////////////
 console.log('');
 function isBalanced(str) {
-    let sortedArr = arr.sort();
+    let temporary=[];
 
-    if (sortedArr.length === 0) return  console.log('arr ['+arr+'] is missing '+ undefined);
-    if (sortedArr[0] !== 1) return  console.log('arr ['+arr+'] is missing '+ 1);
-
-    for (let i=0; i<sortedArr.length; i++) {
-        if (sortedArr[i] !== i+1) return  console.log('arr ['+arr+'] is missing '+ (i+1));
+    for (let i=0; i<str.length; i++) {
+        if (str[i] === '{' || str[i] === '}') temporary.push(str[i]);
     }
 
-    return  console.log('String "'+arr+'" is missing '+ undefined);
+    if (temporary[0] !== '{' || temporary.length%2 !== 0 || temporary.slice(-1) != '}') {
+        return  console.log('String "'+str+'" is balanced? '+ false);
+    }
+    
+    for (let i=0; i<temporary.length/2; i++) {
+        if (temporary[i] !== '{' || temporary[i] === temporary[temporary.length-1-i]) {
+            return  console.log('String "'+str+'" is balanced? '+ false);
+        }
+    }
+    
+    return  console.log('String "'+str+'" is balanced? '+ true);
 }
 ////////////////////////////////////////////////////////////////////////////
