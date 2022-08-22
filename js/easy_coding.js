@@ -22,6 +22,19 @@ factorial(0)                        // 1
 factorial(1)                        // 1
 factorial(6)                        // 720
 
+function factorial(n) {
+    let result=1;
+    if (n < 0) console.log('Please insert the correct value that is >=0');
+    if (n === 0) return console.log('Factorial to number '+ n +' is '+result);
+    else {
+        for (let i=1; i<=n; i++) {
+            result *=i;
+        }
+    }
+    return console.log('Factorial to number '+ n +' is '+result);
+}
+////////////////////////////////////////////////////////////////////////////
+
 3. // fib - Returns the nth Fibonacci number.
 fib(0)                              // 0
 fib(1)                              // 1
