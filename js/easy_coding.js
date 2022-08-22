@@ -96,6 +96,17 @@ function isSorted(arr) {
 reverse('')                         // ''
 reverse('abcdef')                   // 'fedcba'
 
+/////////////////////////////////Solving////////////////////////////////////
+function reverse(str) {
+    let reversed=[];
+    for (let i=0; i<str.length; i++) {
+        reversed.unshift(str[i]);
+    }
+    reversed=reversed.join('')
+    return console.log('reversed to "'+str+'" would be "'+reversed+'"');
+}
+////////////////////////////////////////////////////////////////////////////
+
 6. //indexOf - Implement the indexOf function for arrays.
 indexOf([1, 2, 3], 1)               // 0
 indexOf([1, 2, 3], 4)               // -1
