@@ -4,6 +4,8 @@ isPrime(1)                          // false
 isPrime(17)                         // true
 isPrime(10000000000000)             // false
 
+isPrime(149) 
+
 /////////////////////////////////Solving////////////////////////////////////
 function isPrime(n) {
     if (n>1) {
@@ -22,9 +24,12 @@ factorial(0)                        // 1
 factorial(1)                        // 1
 factorial(6)                        // 720
 
+factorial(-1)
+
+/////////////////////////////////Solving////////////////////////////////////
 function factorial(n) {
     let result=1;
-    if (n < 0) console.log('Please insert the correct value that is >=0');
+    if (n < 0) return console.log(n+' is incorrect value, please insert the correct value that is >=0');
     if (n === 0) return console.log('Factorial to number '+ n +' is '+result);
     else {
         for (let i=1; i<=n; i++) {
@@ -40,6 +45,36 @@ fib(0)                              // 0
 fib(1)                              // 1
 fib(10)                             // 55
 fib(20)                             // 6765
+
+fib(-10)
+
+/////////////////////////////////Solving////////////////////////////////////
+function fib(n) {
+    let result = 0;
+    if (n === 0) return console.log(n+'th fibonacci number is '+0);
+    if (n === 1) return console.log(n+'th fibonacci number is '+1);
+    if (n > 1) {
+        let prev = 0;
+        let current = 1;
+        for (let i=0; i<n-1; i++) {
+            result = current + prev;
+            prev = current;
+            current = result;
+        }
+        return console.log(n+'th fibonacci number is '+result);
+    };
+    if (n < 0) {
+        let prev = 1;
+        let current = 0;
+        for (let i=0; i>n; i--) {
+            result = prev - current;
+            prev = current;
+            current = result;
+        }
+        return console.log(n+'th fibonacci number is '+result);
+    };
+}
+////////////////////////////////////////////////////////////////////////////
 
 4. // isSorted - Returns true or false, indicating whether the given array of numbers is sorted.
 isSorted([])                        // true
