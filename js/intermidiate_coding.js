@@ -4,6 +4,7 @@ isBalanced2('foo { bar { baz }')         // false
 isBalanced2('foo { (bar [baz] } )')      // false
 
 /////////////////////////////////Solving////////////////////////////////////
+console.log('');
 function isBalanced2(str) {
     let temporary=[];
 
@@ -44,9 +45,18 @@ function isBalanced2(str) {
 }
 ////////////////////////////////////////////////////////////////////////////
 
-// 2. // uniq - Takes an array of numbers, and returns the unique numbers. Can you do it in O(N) time?
-// uniq([])                              // []
-// uniq([1, 4, 2, 2, 3, 4, 8])           // [1, 4, 2, 3, 8]
+2. // uniq - Takes an array of numbers, and returns the unique numbers. Can you do it in O(N) time?
+uniq([])                              // []
+uniq([1, 4, 2, 2, 3, 4, 8])           // [1, 4, 2, 3, 8]
+
+/////////////////////////////////Solving////////////////////////////////////
+console.log('');
+function uniq(arr) {
+    let result = arr.filter((element, index, array) => array.indexOf(element) === index);
+
+    return  console.log('unique to array ['+arr+'] is ['+ result+']');
+}
+////////////////////////////////////////////////////////////////////////////
 
 // 3. // intersection - Find the intersection of two arrays. Can you do it in O(M+N) time (where M and N are the lengths of the two arrays)?
 // intersection([1, 5, 4, 2], [8, 91, 4, 1, 3])    // [4, 1]
