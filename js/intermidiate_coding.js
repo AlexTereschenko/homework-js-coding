@@ -13,12 +13,6 @@ function isBalanced2(str) {
         }
     }
 
-    // if ((temporary[0] === '}') || (temporary[0] === ')') || (temporary[0] === ']') || 
-    //     (temporary.length%2 !== 0) || 
-    //     (temporary.slice(-1) === '{') || (temporary.slice(-1) === '(') || (temporary.slice(-1) === '[')) {
-    //     return  console.log('String "'+str+'" is balanced? '+ false);
-    // }
-
     for (let i=0; i<=temporary.length; i++) {
         bracketRemover(temporary)
     }
