@@ -81,6 +81,17 @@ isSorted([])                        // true
 isSorted([-Infinity, -5, 0, 3, 9])  // true
 isSorted([3, 9, -3, 10])            // false
 
+isSorted([-Infinity, null, Infinity])
+
+/////////////////////////////////Solving////////////////////////////////////
+function isSorted(arr) {
+    for (let i=1; i<arr.length; i++) {
+        if (arr[i-1]>arr[i]) return console.log('Array ['+arr+'] is sorted? '+false);
+    }
+    return console.log('Array ['+arr+'] is sorted? '+true);
+}
+////////////////////////////////////////////////////////////////////////////
+
 5. // reverse - Reverses the given string (yes, using the built in reverse function is cheating).
 reverse('')                         // ''
 reverse('abcdef')                   // 'fedcba'
