@@ -7,6 +7,7 @@ isPrime(10000000000000)             // false
 isPrime(149) 
 
 /////////////////////////////////Solving////////////////////////////////////
+console.log('');
 function isPrime(n) {
     if (n>1) {
         if (n === 2 || n === 3 || n === 5 || n === 7) {
@@ -27,6 +28,7 @@ factorial(6)                        // 720
 factorial(-1)
 
 /////////////////////////////////Solving////////////////////////////////////
+console.log('');
 function factorial(n) {
     let result=1;
     if (n < 0) return console.log(n+' is incorrect value, please insert the correct value that is >=0');
@@ -49,6 +51,7 @@ fib(20)                             // 6765
 fib(-10)
 
 /////////////////////////////////Solving////////////////////////////////////
+console.log('');
 function fib(n) {
     let result = 0;
     if (n === 0) return console.log(n+'th fibonacci number is '+0);
@@ -84,6 +87,7 @@ isSorted([3, 9, -3, 10])            // false
 isSorted([-Infinity, null, Infinity])
 
 /////////////////////////////////Solving////////////////////////////////////
+console.log('');
 function isSorted(arr) {
     for (let i=1; i<arr.length; i++) {
         if (arr[i-1]>arr[i]) return console.log('Array ['+arr+'] is sorted? '+false);
@@ -99,6 +103,7 @@ reverse('abcdef')                   // 'fedcba'
 reverse('21324')
 
 /////////////////////////////////Solving////////////////////////////////////
+console.log('');
 function reverse(str) {
     let reversed=[];
     for (let i=0; i<str.length; i++) {
@@ -116,6 +121,7 @@ indexOf([1, 2, 3], 4)               // -1
 indexOf([1, 2, 3, 2, 3], 2) 
 
 /////////////////////////////////Solving////////////////////////////////////
+console.log('');
 function indexOf(arr, chr) {
     let indexes=[];
 
@@ -141,6 +147,7 @@ isPalindrome('A man a plan a canal Panama')     // true
 isPalindrome('tenet')
 
 /////////////////////////////////Solving////////////////////////////////////
+console.log('');
 function isPalindrome(str) {
     let result=true;
     let unspacedStr = str.split(' ').join('').toLowerCase();
@@ -162,6 +169,25 @@ missing([2, 3, 4])                  // 1
 missing([5, 1, 4, 2])               // 3
 missing([1, 2, 3, 4])               // undefined
 
+missing([1, 2, 3])
+
+/////////////////////////////////Solving////////////////////////////////////
+console.log('');
+function missing(arr) {
+    let sortedArr = arr;
+        sortedArr = sortedArr.sort();
+
+    if (sortedArr.length === 0) return  console.log('arr ['+arr+'] is missing '+ undefined);
+    if (sortedArr[0] !== 1) return  console.log('arr ['+arr+'] is missing '+ 1);
+
+    for (let i=0; i<sortedArr.length; i++) {
+        if (sortedArr[i] !== i+1) return  console.log('arr ['+arr+'] is missing '+ (i+1));
+    }
+
+    return  console.log('arr ['+arr+'] is missing '+ undefined);
+}
+////////////////////////////////////////////////////////////////////////////
+
 9. // isBalanced - Takes a string and returns true or false indicating whether its curly braces are balanced.
 isBalanced('}{')                      // false
 isBalanced('{{}')                     // false
@@ -169,3 +195,19 @@ isBalanced('{}{}')                    // false
 isBalanced('foo { bar { baz } boo }') // true
 isBalanced('foo { bar { baz }')       // false
 isBalanced('foo { bar } }')           // false
+
+/////////////////////////////////Solving////////////////////////////////////
+console.log('');
+function isBalanced(str) {
+    let sortedArr = arr.sort();
+
+    if (sortedArr.length === 0) return  console.log('arr ['+arr+'] is missing '+ undefined);
+    if (sortedArr[0] !== 1) return  console.log('arr ['+arr+'] is missing '+ 1);
+
+    for (let i=0; i<sortedArr.length; i++) {
+        if (sortedArr[i] !== i+1) return  console.log('arr ['+arr+'] is missing '+ (i+1));
+    }
+
+    return  console.log('String "'+arr+'" is missing '+ undefined);
+}
+////////////////////////////////////////////////////////////////////////////
