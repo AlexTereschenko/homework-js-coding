@@ -4,6 +4,19 @@ isPrime(1)                          // false
 isPrime(17)                         // true
 isPrime(10000000000000)             // false
 
+/////////////////////////////////Solving////////////////////////////////////
+function isPrime(n) {
+    if (n>1) {
+        if (n === 2 || n === 3 || n === 5 || n === 7) {
+            return console.log(n+' isPrime ' + true);
+            } else if (n % 1 === 0 && n %2 !== 0 && n %3 !== 0 && n %5 !== 0) {
+                return console.log(n+' isPrime ' + true);
+            }
+    }
+    return console.log(n+' isPrime ' + false);
+}
+////////////////////////////////////////////////////////////////////////////
+
 2. // factorial - Returns a number that is the factorial of the given number.
 factorial(0)                        // 1
 factorial(1)                        // 1
