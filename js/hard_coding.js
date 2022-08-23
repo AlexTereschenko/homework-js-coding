@@ -45,18 +45,24 @@ let a = Promise.resolve('a')
 let b = Promise.resolve('b')
 let c = Promise.resolve('c')
 
+let d = new Promise((resolve, reject) => setTimeout(() => {resolve('d');}, 200));
+let e = new Promise((resolve, reject) => setTimeout(() => {resolve('e');}, 600));
+let f = new Promise((resolve, reject) => setTimeout(() => {resolve('f');}, 400));
+
 async function asy() {  //was forced to add this function to prevent SyntaxError: "await is only valid in async functions and the top level bodies of modules"
     await seq([a, b, c])                  // ['a', 'b', 'c']
     await seq([a, c, b])                  // ['a', 'c', 'b']
+
+    await seq([d, e, f])                  // ['d', 'e', 'f']
 }
 
 /////////////////////////////////Solving////////////////////////////////////
 console.log('');
 
-function seq(arrOfPromises) {
+async function seq(arrOfPromises) {
     let result = [];
     for(let i=0; i<arrOfPromises.length; i++) {
-        arrOfPromises[i].then(value => result.push(value))
+        await arrOfPromises[i].then(value => result[i] = value)
     }
     return  console.log('For the array of promises'),
             console.log(arrOfPromises),
