@@ -41,11 +41,28 @@ function permute(str) {
 ////////////////////////////////////////////////////////////////////////////
 
 // 2. // seq - Resolve an array of promises in sequence (as opposed to Promise.all, which does it in parallel).
-// let a = Promise.resolve('a')
-// let b = Promise.resolve('b')
-// let c = Promise.resolve('c')
-// await seq([a, b, c])                  // ['a', 'b', 'c']
-// await seq([a, c, b])                  // ['a', 'c', 'b']
+let a = Promise.resolve('a')
+let b = Promise.resolve('b')
+let c = Promise.resolve('c')
 
+async function asy() {  //was forced to add this function to prevent SyntaxError: "await is only valid in async functions and the top level bodies of modules"
+    await seq([a, b, c])                  // ['a', 'b', 'c']
+    await seq([a, c, b])                  // ['a', 'c', 'b']
+}
 
+/////////////////////////////////Solving////////////////////////////////////
+console.log('');
 
+function seq(arrOfPromises) {
+    let result = [];
+    for(let i=0; i<arrOfPromises.length; i++) {
+        arrOfPromises[i].then(value => result.push(value))
+    }
+    return  console.log('For the array of promises'),
+            console.log(arrOfPromises),
+            console.log('the result would be'),
+            console.log(result);
+}
+
+asy();
+////////////////////////////////////////////////////////////////////////////
